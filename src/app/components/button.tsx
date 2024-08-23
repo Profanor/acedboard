@@ -4,8 +4,9 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   children: React.ReactNode;
   customStyles?: string;
   size?: 'small' | 'medium' | 'large';
-  fontSize?: string | number; // font size can be string (class name) or number
-  fontWeight?: string | number; // font weight can be string (class name) or number 
+  fontSize?: string | number; // font size can be string or number
+  fontWeight?: string | number; // font weight can be string or number 
+  borderRadius?: string; 
 }
 
 const Button: React.FC<ButtonProps> = ({
@@ -14,6 +15,7 @@ const Button: React.FC<ButtonProps> = ({
   size = 'medium',
   fontSize,
   fontWeight,
+  borderRadius = '12px', 
   ...props
 }) => {
   // Defined size-based classes
@@ -25,10 +27,11 @@ const Button: React.FC<ButtonProps> = ({
 
   return (
     <button
-      className={`bg-custom-gradient text-white rounded ${sizeClasses[size]} ${customStyles}`}
+      className={`bg-custom-gradient text-white ${sizeClasses[size]} ${customStyles}`}
       style={{
         fontSize: typeof fontSize === 'number' ? `${fontSize}px` : fontSize,
         fontWeight: typeof fontWeight === 'number' ? fontWeight : undefined,
+        borderRadius: borderRadius,
       }}
       {...props}
     >
