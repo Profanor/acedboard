@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Manrope } from "next/font/google";
 import "./globals.css";
 
-const inter = Manrope({ subsets: ["latin"] });
+const manrope = Manrope({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Acedboard", 
@@ -20,7 +20,8 @@ export default function RootLayout({
         <link rel="icon" href="/icons/favicon.ico" />
         <title>Acedboard</title>
       </head>
-      <body className={inter.className}>{children}</body>
+      {/* Used the updated font class name here */}
+      <body className={manrope.className}>{children}</body>
     </html>
   );
 }
