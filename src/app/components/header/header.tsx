@@ -1,7 +1,7 @@
 "use client"
 import React, { useState } from 'react';
 import Image from 'next/image';
-import Button from '../button';
+import Button from '../button/button';
 import { HiOutlineMenuAlt3, HiOutlineX } from 'react-icons/hi';
 
 const Header: React.FC = () => {
