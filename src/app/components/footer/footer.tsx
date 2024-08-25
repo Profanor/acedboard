@@ -1,21 +1,36 @@
-"use client"
+"use client";
 import React from 'react';
 import Image from 'next/image';
 import Button from '../button';
+import EmailSubscription from '../emailInput/emailSubscription';
 
 const Footer: React.FC = () => {
-  return (
-    <footer className="bg-light-purple border-t border-t-transparent border-t-gradient">
-      <div className="max-w-screen-xl mx-auto p-4">
+  const handleSubscription = (email: string) => {
+    console.log(`Subscribed with: ${email}`);
+  };
 
-        {/* Row with Logo, Text, and Button */}
-        <div className="flex items-center justify-between">
-          {/* Logo */}
-          <div className="flex-shrink-0">
-            <Image src="/icons/logo.svg" alt="Logo" width={100} height={100} />
+  return (
+    <footer className="bg-white border-t border-t-transparent border-t-gradient">
+      <div className="max-w-screen-xl mx-auto p-4">
+        {/* Container for Logo, Subscription Section, and Ready to Get Started */}
+        <div className="flex items-start justify-between">
+          {/* Logo and Subscription Section */}
+          <div className="flex flex-col items-start">
+            {/* Logo */}
+            <div className="flex-shrink-0 mb-4">
+              <Image src="/icons/logo.svg" alt="Logo" width={130} height={130} />
+            </div>
+
+            {/* Newsletter Subscription Section */}
+            <div className="flex flex-col items-start">
+              <p className="text-gray-700 text-lg mt-4 whitespace-pre-line">
+                Subscribe to our <br />newsletter
+              </p>
+              <EmailSubscription onSubmit={handleSubscription} />
+            </div>
           </div>
-          
-          {/* Text and Button */}
+
+          {/* Ready to Get Started and Button */}
           <div className="flex items-center space-x-6">
             <p className="text-gray-700 text-lg">Ready to get started?</p>
             <Button
@@ -34,7 +49,8 @@ const Footer: React.FC = () => {
           <div className="flex flex-col md:flex-row items-center text-center md:text-left">
             <p className="text-gray-700 text-sm">All Rights Reserved &copy; acedboard {new Date().getFullYear()}</p>
             <p className="text-gray-700 text-sm md:ml-4 mt-2 md:mt-0">
-              <a href="/terms-of-use" className="hover:underline">Terms of Use</a> | <a href="/privacy-policy" className="hover:underline">Privacy Policy</a>
+              <a href="/terms-of-use" className="hover:underline">Terms of Use</a> | <a href="/privacy-policy" 
+                className="hover:underline">Privacy Policy</a>
             </p>
           </div>
           <div className="flex space-x-8 mt-4 md:mt-0 md:ml-auto">
