@@ -28,7 +28,7 @@ const EmailSubscription: React.FC<EmailSubscriptionProps> = (
         className="w-full max-w-sm p-2 border-b border-gray-300 outline-none"
       />
       <button
-        className="relative ml-2 py-2 px-4 text-white flex items-center justify-center"
+        className="relative mr-2 py-2 px-4 text-white flex items-center justify-center"
         onClick={handleSubmit}
         style={{
           backgroundImage: 'linear-gradient(to right, #6495ED, #DE3163)', // Left to right gradient

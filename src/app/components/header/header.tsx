@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React, { useState } from 'react';
 import Image from 'next/image';
 import Button from '../button/button';
@@ -6,45 +6,71 @@ import { HiOutlineMenuAlt3, HiOutlineX } from 'react-icons/hi';
 
 const Header: React.FC = () => {
   const [isDrawerOpen, setDrawerOpen] = useState(false);
+  const [hoveredItem, setHoveredItem] = useState<string | null>(null);
 
   const toggleDrawer = () => {
     setDrawerOpen(!isDrawerOpen);
   };
 
+  const handleMouseEnter = (item: string) => {
+    setHoveredItem(item);
+  };
+
+  const handleMouseLeave = () => {
+    setHoveredItem(null);
+  };
+
   return (
-    <header className="bg-white text-black p-4 md:p-8 flex items-center justify-between mx-auto">
+    <header className="bg-white text-black p-4 md:p-8 flex items-center justify-between mx-auto relative">
       {/* Logo */}
       <div className="flex items-center">
-        <Image src="/icons/logo.svg" alt="Logo" width={100} height={100} />
+        <Image src="/icons/logo.svg" alt="Logo" width={130} height={130} />
       </div>
 
       {/* Navigation Links and Buttons for Desktop */}
       <div className="hidden md:flex items-center justify-between flex-grow">
         {/* Navigation Links */}
-        <nav className="flex flex-grow justify-center space-x-4">
+        <nav className="flex flex-grow justify-center space-x-4 relative">
           {['Features', 'Solution', 'Case Study', 'Resources'].map((item) => (
-            <a key={item} href={`#${item}`} className="text-[#333] text-xs font-normal p-2 rounded flex items-center hover:text-blue-800 transition-colors">
-              {item}
-              <svg className="ml-1" width="8" height="5" viewBox="0 0 8 5" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M1 1L4 4L7 1" stroke="#333" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
-            </a>
+            <div
+              key={item}
+              className="relative"
+              onMouseEnter={() => handleMouseEnter(item)}
+              onMouseLeave={handleMouseLeave}
+            >
+              <a href={`#${item}`} className="text-[#333] text-lg font-normal p-2 rounded flex items-center hover:text-blue-800 transition-colors">
+                {item}
+                <svg className="ml-1" width="8" height="5" viewBox="0 0 8 5" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M1 1L4 4L7 1" stroke="#333" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </a>
+              {/* Dropdown Menu */}
+              {hoveredItem === item && (
+                <div className="absolute top-full left-0 mt-2 bg-white shadow-lg border rounded-md w-40">
+                  <a href={`#${item}-content1`} className="block p-2 text-black hover:bg-gray-100">Content 1</a>
+                  <a href={`#${item}-content2`} className="block p-2 text-black hover:bg-gray-100">Content 2</a>
+                </div>
+              )}
+            </div>
           ))}
-          <a href="#pricing" className="text-[#333] text-xs font-normal p-2 rounded hover:text-blue-800 transition-colors">
+          <a
+            href="#pricing"
+            className="text-[#333] text-lg font-normal p-2 rounded hover:text-blue-800 transition-colors hover:glow-gold"
+          >
             Pricing
           </a>
         </nav>
 
         {/* Sign In and Button */}
         <div className="flex items-center space-x-4 ml-auto">
-          <a href="#sign-in" className="text-[#333] text-xs hover:text-blue-800 p-2 rounded-md hover:bg-blue-50 transition-colors">
+          <a href="#sign-in" className="text-[#333] text-lg hover:text-blue-800 p-2 rounded-md hover:bg-blue-50 transition-colors">
             Sign In
           </a>
           <Button
             size="medium"
             customStyles="text-white"
-            fontSize={12}
-            borderRadius="12px"
+            fontSize={14}
+            borderRadius="6px"
           >
             Start for Free
           </Button>
