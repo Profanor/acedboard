@@ -96,7 +96,9 @@ const Footer: React.FC = () => {
           <div className="flex flex-col md:flex-row items-center text-center md:text-left">
             <p className="text-gray-700 text-sm">All Rights Reserved &copy; acedboard {new Date().getFullYear()}</p>
             <p className="text-gray-700 text-sm md:ml-6 mt-2 md:mt-0">
-              <a href="/terms-of-use" className="hover:underline">Terms of Use</a> | <a href="/privacy-policy" className="hover:underline">Privacy Policy</a>
+              <a href="/terms-of-use" 
+              className="hover:underline">Terms of Use</a> | <a href="/privacy-policy" 
+              className="hover:underline">Privacy Policy</a>
             </p>
           </div>
           <div className="flex space-x-6 md:space-x-8 mt-4 md:mt-0 md:ml-auto">

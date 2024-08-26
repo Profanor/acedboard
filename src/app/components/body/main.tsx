@@ -34,19 +34,24 @@ const MainBody: React.FC = () => {
   return (
     <main className="p-8 bg-gray-100 min-h-screen">
       {/* Introductory Section */}
-      <section className="mb-8 text-center">
-        <h1 className="text-3xl font-bold mb-4">Welcome to Our Blog</h1>
-        <p className="text-lg text-gray-700 mb-6">
-          Explore our latest articles, insights, and updates in the tech world.
+      <section className="mb-8 flex flex-col items-start ml-12">
+        <h1 className="text-3xl text-black font-bold mb-4">
+          How Can We{' '}
+          <span className="bg-gradient-to-r from-pink-300 to-purple-500 text-transparent bg-clip-text">
+            Help You
+          </span>{' '}
+          Today?
+        </h1>
+        <p className="text-lg text-gray-500 mb-6">
+          Explore our latest articles, insights, and updates.
         </p>
         <Article 
           headerText={'Articles in this section'} 
           dropdowns={dropdowns} 
         />
       </section>
-
       <section>
-        
+      
       </section>
     </main>
   );

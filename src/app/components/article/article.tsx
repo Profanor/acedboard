@@ -27,7 +27,7 @@ const Article: React.FC<ArticleProps> = ({ headerText, dropdowns }) => {
   };
 
   return (
-    <div className="p-1 max-w-xs mx-auto rounded-lg border-gradient">
+    <div className="p-1 rounded-lg border-gradient max-w-full">
       <article className="p-6 bg-white rounded-lg">
         {/* Header Text */}
         <header className="mb-4 text-xl text-black font-semibold flex justify-start">
@@ -45,14 +45,18 @@ const Article: React.FC<ArticleProps> = ({ headerText, dropdowns }) => {
               <FaChevronDown className={`text-black transition-transform ${openDropdowns[index] ? 'rotate-180' : ''}`} />
             </div>
 
-            {/* Bullet Points */}
-            {openDropdowns[index] && (
-              <ul className="mt-6 list-disc pl-6 text-black flex flex-col items-start whitespace-pre-line">
+            {/* Bullet Points with smooth transition */}
+            <div
+              className={`overflow-hidden transition-all duration-500 ease-in-out ${
+                openDropdowns[index] ? 'max-h-screen opacity-100 mt-6' : 'max-h-0 opacity-0'
+              }`}
+            >
+              <ul className="list-disc pl-6 text-black flex flex-col items-start whitespace-pre-line">
                 {dropdown.bulletPoints.map((point, pointIndex) => (
-                  <li key={pointIndex}>{point}</li>
+                  <li className='mt-2' key={pointIndex}>{point}</li>
                 ))}
               </ul>
-            )}
+            </div>
           </div>
         ))}
       </article>
