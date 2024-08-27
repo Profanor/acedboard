@@ -3,7 +3,6 @@ import Article from '../article/article';
 import InputWithButton from '../inputField/inputField';
 
 const MainBody: React.FC = () => {
-
   // Define dropdown data
   const dropdowns = [
     {
@@ -36,7 +35,7 @@ const MainBody: React.FC = () => {
   const imagesAndTexts = [
     { text: "What is a Project?", image: "/images/firstimage.png" },
     { text: "Creating a Project", image: "/images/firstimage.png" },
-    { text: "Development Phase", image: "/images/image2.png" },
+    { text: "Naming your projects", image: "/images/image2.png" },
     { text: "Testing and Debugging", image: "/images/image2.png" },
     { text: "Launch Preparations", image: "/images/image2.png" },
     { text: "Going Live", image: "/images/image3.png" },
@@ -54,7 +53,7 @@ const MainBody: React.FC = () => {
   ];
 
   return (
-    <main className="p-8 bg-white min-h-screen">
+    <main className="p-8 bg-white min-h-screen mt-16 md:mt-24 lg:mt-32"> 
       {/* Introductory Section */}
       <section className="mb-8 ml-4">
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between">
@@ -76,16 +75,16 @@ const MainBody: React.FC = () => {
 
       {/* Images and Article Section */}
       <section className="flex flex-col sm:flex-row sm:justify-between mt-4">
-        <div className="flex flex-col max-w-xs sm:w-1/2 mb-8 sm:mb-0 ml-4">
+        <div className="flex flex-col max-w-xs sm:w-1/2 mt-6 sm:mb-0 ml-4">
           <Article 
             headerText={'Articles in this section'} 
             dropdowns={dropdowns} 
           />
         </div>
-        <div className="flex flex-col sm:w-1/2 sm:pl-4">
+        <div className="flex flex-col sm:w-1/2 sm:pr-4">
           {imagesAndTexts.map((item, index) => (
-            <div key={index} className="flex flex-col items-center mb-4">
-              <p className="text-center text-lg text-black font-medium mb-2">{item.text}</p>
+            <div key={index} className="flex flex-col items-center mt-4">
+              <p className="text-center text-lg text-black font-medium mb-4">{item.text}</p>
               <img
                 src={item.image}
                 alt={`Image ${index + 1}`}

@@ -7,8 +7,8 @@ const InputWithButton: React.FC = () => {
       {/* Input Field */}
       <input
         type="text"
-        placeholder="Search..."
-        className="bg-white text-black p-2 pl-4 pr-20 rounded-lg border border-[#C2C7D066] focus:outline-none focus:ring-2 focus:ring-blue-500 w-full"
+        placeholder="Find in templates"
+        className="bg-white text-black p-2 pl-4 pr-20 rounded-lg border-4 border-gray-200 focus:outline-none w-full"
       />
       
       {/* Custom Button */}

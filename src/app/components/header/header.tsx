@@ -21,9 +21,9 @@ const Header: React.FC = () => {
   };
 
   return (
-    <header className="bg-white text-black p-4 md:p-8 flex items-center justify-between mx-auto relative">
+    <header className="bg-white text-black p-4 md:p-8 flex items-center justify-between mx-auto fixed top-0 left-0 right-0 z-50 shadow-md md:shadow-none">
       {/* Logo */}
-      <div className="flex items-center">
+      <div className="flex items-center cursor-pointer">
         <Image src="/icons/logo.svg" alt="Logo" width={130} height={130} />
       </div>
 
@@ -38,7 +38,9 @@ const Header: React.FC = () => {
               onMouseEnter={() => handleMouseEnter(item)}
               onMouseLeave={handleMouseLeave}
             >
-              <a href={`#${item}`} className="text-[#333] text-lg font-normal p-2 rounded flex items-center hover:text-blue-800 transition-colors">
+              <a href={`#${item}`} 
+              className="text-[#333] text-lg font-normal p-2 rounded flex items-center 
+                hover:text-blue-800 transition-colors">
                 {item}
                 <svg className="ml-1" width="8" height="5" viewBox="0 0 8 5" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M1 1L4 4L7 1" stroke="#333" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
@@ -118,7 +120,9 @@ const Header: React.FC = () => {
 
             {/* Buttons */}
             <div className="mt-8">
-              <a href="#sign-in" className="block text-[#333] text-xs hover:text-blue-800 p-2 rounded-md hover:bg-blue-50 transition-colors">
+              <a href="#sign-in" 
+              className="block text-[#333] text-xs hover:text-blue-800 p-2 rounded-md 
+                hover:bg-blue-50 transition-colors">
                 Sign In
               </a>
               <Button
