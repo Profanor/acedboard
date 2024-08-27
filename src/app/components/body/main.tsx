@@ -1,6 +1,7 @@
 import React from 'react';
 import Article from '../article/article';
 import InputWithButton from '../inputField/inputField';
+import ImageWithText from '../image/imageWithText';
 
 const MainBody: React.FC = () => {
   // Define dropdown data
@@ -32,24 +33,12 @@ const MainBody: React.FC = () => {
   ];
 
   // Array of images and dummy texts
-  const imagesAndTexts = [
-    { text: "What is a Project?", image: "/images/firstimage.png" },
-    { text: "Creating a Project", image: "/images/firstimage.png" },
-    { text: "Naming your projects", image: "/images/image2.png" },
-    { text: "Testing and Debugging", image: "/images/image2.png" },
-    { text: "Launch Preparations", image: "/images/image2.png" },
-    { text: "Going Live", image: "/images/image3.png" },
-    { text: "User Feedback", image: "/images/image3.png" },
-    { text: "Iterative Improvements", image: "/images/image4.png" },
-    { text: "Scaling Operations", image: "/images/image5.png" },
-    { text: "Introducing New Features", image: "/images/image5.png" },
-    { text: "Monitoring System Health", image: "/images/image5.png" },
-    { text: "Security Enhancements", image: "/images/image5.png" },
-    { text: "Customer Support", image: "/images/image5.png" },
-    { text: "Performance Tuning", image: "/images/image5.png" },
-    { text: "Regular Updates", image: "/images/image5.png" },
-    { text: "User Training", image: "/images/firstimage.png" },
-    { text: "Project Retrospective", image: "/images/firstimage.png" }
+  const imageData = [
+    { headerText: "What is a Project?", descriptionText: "Learn about project basics. In Acedboard, a project is the second level in the organizational unit", imageUrl: "/images/firstimage.png" },
+    { headerText: "Creating a Project", descriptionText: "Steps to create a new project.", imageUrl: "/images/firstimage.png" },
+    { headerText: "Naming your projects", descriptionText: "Best practices for naming.", imageUrl: "/images/image2.png" },
+    { headerText: "Testing and Debugging", descriptionText: "Techniques for testing and debugging.", imageUrl: "/images/image2.png" },
+    // testing before adding more items
   ];
 
   return (
@@ -82,14 +71,12 @@ const MainBody: React.FC = () => {
           />
         </div>
         <div className="flex flex-col sm:w-1/2 sm:pr-4">
-          {imagesAndTexts.map((item, index) => (
+          {imageData.map((item, index) => (
             <div key={index} className="flex flex-col items-center mt-4">
-              <p className="text-center text-lg text-black font-medium mb-4">{item.text}</p>
-              <img
-                src={item.image}
-                alt={`Image ${index + 1}`}
-                className="w-full md:w-3/4 lg:w-full"
-                style={{ maxHeight: '200px', objectFit: 'contain' }}
+              <ImageWithText
+                headerText={item.headerText}
+                descriptionText={item.descriptionText}
+                imageUrl={item.imageUrl}
               />
             </div>
           ))}
