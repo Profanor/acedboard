@@ -11,7 +11,7 @@ const ImageWithText: React.FC<ImageWithTextProps> = ({ imageUrl, headerText, des
   return (
     <div className={`flex flex-col items-start ${className}`}>
       {/* Text content */}
-      <div className="p-4">
+      <div className="p-1">
         <h2 className="text-black text-xl font-bold">{headerText}</h2>
         <p className="text-[#74757A] text-base whitespace-preline">{descriptionText}</p>
       </div>

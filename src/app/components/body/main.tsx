@@ -77,7 +77,7 @@ const MainBody: React.FC = () => {
         </div>
         <div className="flex flex-col sm:w-1/2 sm:pr-4">
           {imageData.map((item, index) => (
-            <div key={index} className="flex flex-col items-center mt-4">
+            <div key={index} className="flex flex-col items-center mt-8">
               <ImageWithText
                 headerText={item.headerText}
                 descriptionText={item.descriptionText}
