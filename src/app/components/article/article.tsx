@@ -38,7 +38,7 @@ const Article: React.FC<ArticleProps> = ({ headerText, dropdowns }) => {
           <div key={index}>
             {/* Dropdown */}
             <div
-              className="p-4 mt-4 bg-white border border-footerColor rounded-lg flex justify-between items-center cursor-pointer"
+              className="p-3 mt-4 bg-white border border-footerColor rounded-lg flex justify-between items-center cursor-pointer"
               onClick={() => toggleDropdown(index)}
             >
               <span className="text-gradient">{dropdown.label}</span>
@@ -53,7 +53,7 @@ const Article: React.FC<ArticleProps> = ({ headerText, dropdowns }) => {
             >
               <ul className="list-disc pl-6 text-black flex flex-col items-start whitespace-pre-line">
                 {dropdown.bulletPoints.map((point, pointIndex) => (
-                  <li className='mt-2' key={pointIndex}>{point}</li>
+                  <li className='mt-3' key={pointIndex}>{point}</li>
                 ))}
               </ul>
             </div>
