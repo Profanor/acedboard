@@ -34,11 +34,16 @@ const MainBody: React.FC = () => {
 
   // Array of images and dummy texts
   const imageData = [
-    { headerText: "What is a Project?", descriptionText: "Learn about project basics. In Acedboard, a project is the second level in the organizational unit", imageUrl: "/images/firstimage.png" },
-    { headerText: "Creating a Project", descriptionText: "Steps to create a new project.", imageUrl: "/images/firstimage.png" },
-    { headerText: "Naming your projects", descriptionText: "Best practices for naming.", imageUrl: "/images/image2.png" },
+    { headerText: "What is a Project?", descriptionText: `In Acedboard, a project is the second level in the organizational unit. A project is a group of tasks and or
+      people working together for a specific goal, outcome within a set time.`, imageUrl: "/images/firstimage.png" },
+
+    { headerText: "Creating a Project", descriptionText: "Once you have selected the three dots, select the new project to get started.", 
+      imageUrl: "/images/firstimage.png" },
+
+    { headerText: "Naming your projects and select view modes", descriptionText: "Best practices for naming.", imageUrl: "/images/image2.png" },
     { headerText: "Testing and Debugging", descriptionText: "Techniques for testing and debugging.", imageUrl: "/images/image2.png" },
-    // testing before adding more items
+    { headerText: "Testing and Debugging", descriptionText: "Techniques for testing and debugging.", imageUrl: "/images/image2.png" },
+    
   ];
 
   return (
