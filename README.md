@@ -34,7 +34,8 @@ Key components include:
 - ImageWithText
 - InputWithButton
 
-- Component Hierarchy: A clear hierarchy was established to maintain the structure and flow of the page, with each component corresponding to a specific section of the design.
+## Component Hierarchy
+ A clear hierarchy was established to maintain the structure and flow of the page, with each component corresponding to a specific section of the design.
 
 - Styling with Tailwind CSS
 Utility-First Approach: Tailwind CSS was used to style the components, leveraging its utility classes for rapid implementation. This approach allowed for precise control over spacing, alignment, and responsiveness.
